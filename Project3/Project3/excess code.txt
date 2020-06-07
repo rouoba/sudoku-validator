@@ -1,0 +1,252 @@
+/*thread logic
+-copy list of numbers to check
+-assume true unless proven otherwise
+-remove number from check list and vector if found in row/column
+- if the check list is empty but the row/column isn't then there's an error
+-if there's an error return false and cout that there is an error/end program*/
+
+/*create 3x3 puzzle with random numbers (test purposes)
+srand(time(NULL));
+do {
+for (int i = 0; i < 3; i++)
+{
+int x = (rand() % 9) + 1;
+cout << x << " ";
+}
+cout << endl;
+limit++;
+} while (limit != 3);
+cout << endl;*/
+
+
+/*do {
+for (int i = 0; i < 9; i++)
+{
+int x = (rand() % 9) + 1;
+cout << x << " ";
+}
+cout << endl;
+limit++;
+} while (limit != 9);
+cout << endl;*/
+
+
+/*hread t1(tr);
+thread t9(tr);
+
+//threads 10-18 for columns
+//for loop for threads 10-18
+thread t10(tc);
+thread t18(tc);
+
+//threads 19-27 for boxes
+//for loop for threads 19-27
+thread t19(tr);
+thread t27(tr);
+*/
+
+/*
+//thread for rows
+bool tr()
+{
+return true;
+}
+
+//thread for columns
+bool tc()
+{
+return true;
+}
+
+//thread for boxes
+bool tb()
+{
+return true;
+}
+*/
+
+//if (response == 'y' || response == 'Y') {
+//	for (int i = 0; i < 9; i++) {
+//		cout << "Enter nine numbers between 1 and 9 for row " << i + 1 << ": ";
+//		for (int j = 0; j < 9; j++) {
+//			cin >> a;
+//			puzzle_manu[i][j] = a;
+//		}
+//	}
+//}
+
+//cout << endl;
+//if (response == 'y' || response == 'Y') {
+//	cout << "This is your puzzle: " << endl;
+//	for (int i = 0; i < 9; i++) { //row
+//		for (int j = 0; j < 9; j++) { //column
+//			cout << puzzle_manu[i][j] << " ";
+//		}
+//		cout << endl;
+//	}
+//}
+
+
+//============================Validation Threads================================//
+//==============================================================================//
+//thread 1 is for rows 1 to 9
+//thread 2 was to validate columns (unnecessary & unused)
+//threads 3 to 11 are for the 9 boxes
+
+//=====================Random Puzzle Validation=======================//
+/*thread t1(validateRow, puzzle_rand);
+t1.join();
+//space for unused t2
+thread t3(validateBox, 1, 0, 0, puzzle_rand);
+thread t4(validateBox, 2, 0, 3, puzzle_rand);
+t3.join();
+t4.join();
+thread t5(validateBox, 3, 0, 6, puzzle_rand);
+thread t6(validateBox, 4, 3, 0, puzzle_rand);
+t5.join();
+t6.join();
+thread t7(validateBox, 5, 3, 3, puzzle_rand);
+thread t8(validateBox, 6, 3, 6, puzzle_rand);
+t7.join();
+t8.join();
+thread t9(validateBox, 7, 6, 0, puzzle_rand);
+thread t10(validateBox, 8, 6, 3, puzzle_rand);
+t9.join();
+t10.join();
+thread t11(validateBox, 9, 6, 6, puzzle_rand);
+t11.join();*/
+//=====================Random Puzzle Validation Result====================//
+/*int index1 = 0;
+while (index1 < 9) {
+if (resultValidationB[index1] == 1)
+index1++;    //keep checking the array as long as it is filled with 1s
+else
+break;  //stop as soon as array contains one 0
+}
+
+if ((index1 == 9) && resultValidationR[0] == 1)   //resultValidation contains only 1s
+cout << "The puzzle is correct." << endl;
+else
+cout << "The puzzle is incorrect" << endl;
+
+
+//reset resultValidationR and resultValidationC for validation of correct puzzle
+resultValidationR[0] = 0;
+for (int i = 0; i < 9; i++) {
+resultValidationB[i] = 0;
+}*/
+
+
+//=====================Correct Puzzle Validation=======================//
+//======================================================================//
+/*thread t12(validateRow, puzzle_corr);
+t12.join();
+//space for unused t13
+thread t14(validateBox, 1, 0, 0, puzzle_corr);
+thread t15(validateBox, 2, 0, 3, puzzle_corr);
+t14.join();
+t15.join();
+thread t16(validateBox, 3, 0, 6, puzzle_corr);
+thread t17(validateBox, 4, 3, 0, puzzle_corr);
+t16.join();
+t17.join();
+thread t18(validateBox, 5, 3, 3, puzzle_corr);
+thread t19(validateBox, 6, 3, 6, puzzle_corr);
+t18.join();
+t19.join();
+thread t20(validateBox, 7, 6, 0, puzzle_corr);
+thread t21(validateBox, 8, 6, 3, puzzle_corr);
+t20.join();
+t21.join();
+thread t22(validateBox, 9, 6, 6, puzzle_corr);
+t22.join();
+//=======================Correct Puzzle validation Result=================//
+int index2 = 0;
+while (index2 < 9) {
+if (resultValidationB[index2] == 1)
+index2++;    //keep checking the array as long as it is filled with 1s
+else
+break;  //stop as soon as array contains one 0
+}
+
+if ((index2 == 9) && resultValidationR[0] == 1)   //resultValidation contains only 1s
+cout << "The puzzle is correct." << endl;
+else
+cout << "The puzzle is incorrect" << endl;
+
+
+//reset resultValidationR and resultValidationC for eventual validation of manual puzzle
+resultValidationR[0] = 0;
+for (int i = 0; i < 9; i++) {
+resultValidationB[i] = 0;
+}*/
+
+
+//=====================MANUAL PUZZLE FILL===================================
+//===========================================================================
+//ask for manual puzzle entry and validation
+//if yes, take entry then validate, if no then exit*/
+/*char response; //response for entering own puzzle
+int a; //puzzle value used to manually fill the puzzle
+cout << "Would you like to enter your own puzzle?";
+cin >> response;
+if (response == 'y' || response == 'Y') {
+for (int i = 0; i < 9; i++) {
+cout << "Enter nine numbers between 1 and 9 for row " << i + 1 << ": ";
+for (int j = 0; j < 9; j++) {
+cin >> a;
+puzzle_manu[i][j] = a;
+}
+}
+}
+
+cout << endl;
+if (response == 'y' || response == 'Y') {
+cout << "This is your puzzle: " << endl;
+for (int i = 0; i < 9; i++) { //row
+for (int j = 0; j < 9; j++) { //column
+cout << puzzle_manu[i][j] << " ";
+}
+cout << endl;
+}
+}*/
+
+
+////=====================Manual Puzzle Validation=======================//
+//thread t1(validateRow, puzzle_manu);
+//t1.join();
+////space for unused t2
+//thread t3(validateBox, 1, 0, 0, puzzle_manu);
+//thread t4(validateBox, 2, 0, 3, puzzle_manu);
+//t3.join();
+//t4.join();
+//thread t5(validateBox, 3, 0, 6, puzzle_manu);
+//thread t6(validateBox, 4, 3, 0, puzzle_manu);
+//t5.join();
+//t6.join();
+//thread t7(validateBox, 5, 3, 3, puzzle_manu);
+//thread t8(validateBox, 6, 3, 6, puzzle_manu);
+//t7.join();
+//t8.join();
+//thread t9(validateBox, 7, 6, 0, puzzle_manu);
+//thread t10(validateBox, 8, 6, 3, puzzle_manu);
+//t9.join();
+//t10.join();
+//thread t11(validateBox, 9, 6, 6, puzzle_manu);
+//t11.join();
+////=======================Manual Puzzle validation Result=================//
+//int index3 = 0;
+//while (index3 < 9) {
+//	if (resultValidationB[index3] == 1)
+//		index3++;    //keep checking the array as long as it is filled with 1s
+//	else
+//		break;  //stop as soon as array contains one 0
+//}
+
+//if ((index3 == 9) && resultValidationR[0] == 1)   //resultValidation contains only 1s
+//	cout << "The puzzle is correct." << endl;
+//else
+//	cout << "The puzzle is incorrect" << endl;
+
+
+

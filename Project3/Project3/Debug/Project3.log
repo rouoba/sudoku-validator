@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\oazie\desktop\new folder\project3\project3\source.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\oazie\desktop\new folder\project3\project3\source.cpp(53): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\oazie\desktop\new folder\project3\project3\source.cpp(78): warning C4101: 'a': unreferenced local variable
+c:\users\oazie\desktop\new folder\project3\project3\source.cpp(65): warning C4101: 'p': unreferenced local variable
+c:\users\oazie\desktop\new folder\project3\project3\source.cpp(329): warning C4018: '<': signed/unsigned mismatch
+  Project3.vcxproj -> C:\Users\oazie\Desktop\New folder\Project3\Debug\Project3.exe
